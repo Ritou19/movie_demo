@@ -14,18 +14,20 @@ angular.module('movieDemoApp')
       'AngularJS',
       'Karma'
     ];
-	
-	for(var i=0; i<100; i++) {
-	 $scope.awesomeThings.push('Element '+ (i+1));
-	};
+
+//	Incrémenter la liste par des nombres	
+//	for(var i=0; i<100; i++) {
+//	 $scope.awesomeThings.push('Titre '+ (i+1));
+//	};
 	
     $scope.nbAffiche=10;
 	$scope.debut=3;
 	
 	$scope.monClick = function(){
 	
-	$scope.awesomeThings.push($scope.nouveauFilm);
-	$scope.nouveauFilm = '';
+		$scope.awesomeThings.push($scope.nouveauFilm);
+		$scope.serealizer($scope.nouveauFilm);
+		$scope.nouveauFilm = '';
 	
 	}; 
 	
@@ -33,6 +35,11 @@ angular.module('movieDemoApp')
 	
 	$scope.supprimerFilm = function(film) {
 		var removed = $scope.awesomeThings.splice($scope.awesomeThings.indexOf(film), 1);
+	}
+
+	$scope.serealizer = function (newFilm) {
+		var jsonFilm = JSON.stringify(newFilm);
+		localStorage.setItem('film1', jsonFilm);
 	}
 
   });
