@@ -9,11 +9,9 @@
  */
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  	var listFilmJSON = localStorage.getItem('listFilm');
+  	var listFilm = JSON.parse(listFilmJSON);
+    $scope.listFilm = listFilm;
 
 //	Incrémenter la liste par des nombres	
 //	for(var i=0; i<100; i++) {
@@ -21,12 +19,12 @@ angular.module('movieDemoApp')
 //	};
 	
     $scope.nbAffiche=10;
-	$scope.debut=3;
+	$scope.debut=0;
 	
 	$scope.monClick = function(){
 	
-		$scope.awesomeThings.push($scope.nouveauFilm);
-		$scope.serealizer($scope.nouveauFilm);
+		$scope.listFilm.push($scope.nouveauFilm);
+		$scope.serealizer($scope.listFilm);
 		$scope.nouveauFilm = '';
 	
 	}; 
@@ -34,12 +32,13 @@ angular.module('movieDemoApp')
 	$scope.active = true;
 	
 	$scope.supprimerFilm = function(film) {
-		var removed = $scope.awesomeThings.splice($scope.awesomeThings.indexOf(film), 1);
+		var removed = $scope.listFilm.splice($scope.listFilm.indexOf(film), 1);
+		$scope.serealizer($scope.listFilm);
 	}
 
-	$scope.serealizer = function (newFilm) {
-		var jsonFilm = JSON.stringify(newFilm);
-		localStorage.setItem('film1', jsonFilm);
+	$scope.serealizer = function (listFilm) {
+		var jsonFilm = JSON.stringify(listFilm);
+		localStorage.setItem('listFilm', jsonFilm);
 	}
 
   });
