@@ -4,19 +4,17 @@
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Always a pleasure scaffolding your apps.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
-<input type="text" ng-model="nouveauFilm" />
+<span>Titre: <input type="text" ng-model="titreFilm" /> Description: <input type="text" ng-model="descriptionFilm" /> 
+<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()"><span class="glyphicon glyphicon-ok"></span></a>
+</span>
 
-<div>
-{{awesomeThings[3]}}
-</div>
 
-<p>{{nouveauFilm}}</p>
-<p ng-bind="nouveauFilm"></p>
+
 <!-- | = a un filtre -->
-<p>Hello uppercase: {{nouveauFilm | uppercase}}</p>
+
 <p>Hello <span ng-bind="nouveauFilm"></span></p>
 
 <label><input type="number" ng-model="nbAffiche"></input> nb à afficher
@@ -26,7 +24,7 @@
 <!-- ng-hide > inverse ou fair ng-hide="!active"-->
 <div ng-show="active">
 <ul>
-	<li class="liste" ng-repeat="film in listFilm | limitTo:nbAffiche:debut track by $index">{{film}}<span class="glyphicon glyphicon-trash" ng-click="supprimerFilm(film)"></span></li>
+	<li class="liste" ng-repeat="film in listFilm | limitTo:nbAffiche:debut track by $index"><a ng-href="#film/{{$index}}/msg">{{film.titre}}</a><span class="glyphicon glyphicon-trash" ng-click="supprimerFilm(film)"></span></li>
 </ul>
 </div>
 

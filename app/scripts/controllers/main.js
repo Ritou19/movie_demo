@@ -10,8 +10,7 @@
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope) {
   	var listFilmJSON = localStorage.getItem('listFilm');
-  	var listFilm = JSON.parse(listFilmJSON);
-    $scope.listFilm = listFilm;
+  	$scope.listFilm = JSON.parse(listFilmJSON);
 
 //	Incrémenter la liste par des nombres	
 //	for(var i=0; i<100; i++) {
@@ -23,9 +22,10 @@ angular.module('movieDemoApp')
 	
 	$scope.monClick = function(){
 	
-		$scope.listFilm.push($scope.nouveauFilm);
+		$scope.listFilm.push({'titre' : $scope.titreFilm, 'description': $scope.descriptionFilm});
 		$scope.serealizer($scope.listFilm);
-		$scope.nouveauFilm = '';
+		$scope.titreFilm = '';
+		$scope.descriptionFilm = '';
 	
 	}; 
 	
@@ -36,9 +36,9 @@ angular.module('movieDemoApp')
 		$scope.serealizer($scope.listFilm);
 	}
 
-	$scope.serealizer = function (listFilm) {
+	 $scope.serealizer = function (listFilm) {
 		var jsonFilm = JSON.stringify(listFilm);
 		localStorage.setItem('listFilm', jsonFilm);
-	}
+	 }
 
   });
