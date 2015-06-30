@@ -1,11 +1,13 @@
 <p>This is the Movie view. {{id}}</p>
 
 <div>
-    <h1>{{movie.titre}}</h1>
-    <p>{{movie.description}}</p>
+    <h1>{{movie.original_title}}</h1>
+    <p>{{movie.overview}}</p>
+    <p></p>
+    <p>Date de sortie: <span ng-bind="movie.release_date"></span></p>
+    <p>Budget:&nbsp<span ng-bind="movie.budget"></span>&nbsp$</p>
+
 </div>
 
-<div>
-    <h1>{{MoviesDB.listFilm[id].titre}}</h1>
-    <p>{{description}}</p>
-</div>
+<p><img ng-src="{{movie.poster_path | URLPoster}}" class="description" width="180" height="280"/></p>
+<p>{{movie.id}}</p>

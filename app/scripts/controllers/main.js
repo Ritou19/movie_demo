@@ -8,9 +8,9 @@
  * Controller of the movieDemoApp
  */
 angular.module('movieDemoApp')
-  .controller('MainCtrl', function ($scope, MoviesDB) {
+  .controller('MainCtrl', function ($scope, MoviesDB, $rootScope) {
 
-  	$scope.listFilm = MoviesDB.getMovies();
+  	
 
 //	Incrémenter la liste par des nombres	
 //	for(var i=0; i<100; i++) {
@@ -21,6 +21,7 @@ angular.module('movieDemoApp')
     $scope.nbAffiche=10;
 	$scope.debut=0;
 	$scope.active = true;
+	$rootScope.bgImage = null;
 	
 	$scope.monClick = function(){
 		

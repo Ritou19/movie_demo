@@ -8,32 +8,30 @@
  * Factory in the movieDemoApp.
  */
 angular.module('movieDemoApp')
-  .factory('MoviesDB', function () {
+  .factory('MoviesDB', function ($http) {
     // Service logic
     // ...
-
+	
     var listFilm = [];
+    var listDetail = [];
+      	var listFilmJSON = localStorage.getItem('listFilm');
+	 	listFilm = JSON.parse(listFilmJSON);
 
-    function serealizer (listFilm) {
-    	var jsonFilm = JSON.stringify(listFilm);
-		localStorage.setItem('listFilm', jsonFilm);
-	 };
+    $http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr')
+    .success(function(data){
+    	listFilm = data.results;
+    })
+    
+
 
 	
     // Public API here
     return {
+      imgURL: 'http://image.tmdb.org/t/p/',
       getMovies: function() {
-      	var listFilmJSON = localStorage.getItem('listFilm');
-	 	listFilm = JSON.parse(listFilmJSON);
+
         return listFilm;
       },
-      addFilm: function (titreFilm, descriptionFilm){
-      	listFilm.push({'titre' : titreFilm, 'description': descriptionFilm});
-		serealizer(listFilm);
-	  },
-	  remove: function(film){
-	  	var removed = listFilm.splice(listFilm.indexOf(film), 1);
-		serealizer(listFilm);
-		}
+          
     };
   });

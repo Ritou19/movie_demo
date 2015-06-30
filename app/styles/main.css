@@ -87,3 +87,8 @@ body {
 .liste {
   margin-right:30px;
 }
+
+.description {
+  background-repeat: no-repeat;
+  background-size: cover;
+}

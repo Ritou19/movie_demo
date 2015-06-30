@@ -16,7 +16,7 @@
     <!-- endbuild -->
   </head>
   <!--Permet de dire que c'est un app de type angular-->
-  <body ng-app="movieDemoApp">
+  <body ng-app="movieDemoApp" style=" background-image: url({{db.imgURL}}w1280{{bgImage}}); background-repeat: no-repeat; background-size: cover">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -90,6 +90,7 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/movie.js"></script>
         <script src="scripts/services/moviesdb.js"></script>
+        <script src="scripts/filters/urlposter.js"></script>
         <!-- endbuild -->
 </body>
 </html>
