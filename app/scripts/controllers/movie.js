@@ -10,5 +10,7 @@
 angular.module('movieDemoApp')
   .controller('MovieCtrl', function ($scope, $routeParams, MoviesDB) {
     $scope.id = $routeParams.id;
-    $scope.text = $routeParams.text;
+    
+    $scope.listFilm = MoviesDB.getMovies();
+    $scope.movie = $scope.listFilm[$scope.id];
   });

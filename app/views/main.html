@@ -8,7 +8,7 @@
 </div>
 
 <span>Titre: <input type="text" ng-model="titreFilm" /> Description: <input type="text" ng-model="descriptionFilm" /> 
-<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()"><span class="glyphicon glyphicon-ok"></span></a>
+<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()"><span class="glyphicon glyphicon-plus"></span></a>
 </span>
 
 
@@ -24,7 +24,7 @@
 <!-- ng-hide > inverse ou fair ng-hide="!active"-->
 <div ng-show="active">
 <ul>
-	<li class="liste" ng-repeat="film in listFilm | limitTo:nbAffiche:debut track by $index"><a ng-href="#film/{{$index}}/msg">{{film.titre}}</a>&nbsp<span class="glyphicon glyphicon-trash" ng-click="supprimerFilm(film)"></span></li>
+	<li class="liste" ng-repeat="film in listFilm | limitTo:nbAffiche:debut track by $index"><a ng-href="#film/{{$index}}">{{film.titre}}</a>&nbsp<span class="glyphicon glyphicon-trash" ng-click="supprimerFilm(film)"></span></li>
 </ul>
 </div>
 

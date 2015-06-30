@@ -22,7 +22,7 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/film/:id/:text',{
+      .when('/film/:id',{
         templateUrl: 'views/movie.html',
         controller: 'MovieCtrl',
       })
