@@ -38,5 +38,5 @@ angular.module('movieDemoApp')
 	};
 
 	 
-
+	var myapp = angular.module('myapp', ['ngFlag']);
   });

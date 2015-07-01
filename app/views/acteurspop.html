@@ -1,0 +1,26 @@
+<h1>Acteurs à l'affiche</h1>
+<br/>
+<br/>
+
+<div>
+
+
+<slick infinite="true" slides-to-show="4" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="listActeurs">
+ <div ng-repeat="acteur in listActeurs | limitTo:10:0 track by $index">
+  <a ng-href="#acteur/{{acteur.id}}">
+	   <img ng-src="{{acteur.profile_path | urlprofile}}" alt="{{acteur.name}}" class="description" width="200" height="310"/>
+	   <p>{{acteur.name}}</p>
+	 </a>
+ </div>
+</slick>
+
+<slick infinite="true" slides-to-show="4" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="listActeurs">
+ <div ng-repeat="acteur in listActeurs | limitTo:10:10 track by $index">
+  <a ng-href="#acteur/{{acteur.id}}">
+	   <img ng-src="{{acteur.profile_path | urlprofile}}" alt="{{acteur.name}}" class="description" width="180" height="280"/>
+	   <p>{{acteur.name}}</p>
+	 </a>
+ </div>
+</slick>
+
+</div>
