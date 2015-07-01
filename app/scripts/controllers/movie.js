@@ -16,6 +16,7 @@ angular.module('movieDemoApp')
              $scope.movie = data;
              $rootScope.bgImage = $scope.movie.backdrop_path;
              $scope.moviesSimilar = $scope.movie.similar.results;
+             $scope.listActeurs = $scope.movie.credits.cast;
 
     });
     
