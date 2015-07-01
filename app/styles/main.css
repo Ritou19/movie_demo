@@ -97,9 +97,13 @@ body {
 
 .navbar {
   margin-bottom: 0px;
-  
+
 }
 
 .pageContenu {
   background-color: rgba(255, 255, 255, 0.83);
+}
+
+.boutonPlus{
+  text-align: right;
 }

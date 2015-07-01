@@ -8,7 +8,7 @@
  * Controller of the movieDemoApp
  */
 angular.module('movieDemoApp')
-  .controller('MainCtrl', function ($scope, MoviesDB, $rootScope) {
+  .controller('MainCtrl', function ($scope, MoviesDB, $rootScope,$http) {
 
   	
 
@@ -17,10 +17,13 @@ angular.module('movieDemoApp')
 //	 $scope.awesomeThings.push('Titre '+ (i+1));
 //	};
 	
-	$scope.MoviesDB = MoviesDB;
-    $scope.nbAffiche=10;
-	$scope.debut=0;
-	$scope.active = true;
+	$http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr').success(function(data){
+    	$scope.listFilmPop = data.results;
+    })
+
+
+//	$scope.MoviesDB = MoviesDB;
+    
 	$rootScope.bgImage = null;
 	
 	$scope.monClick = function(){

@@ -1,6 +1,48 @@
 <center><h1>Bienvenue sur notre awesome WEBSITE</h1></center>
 <br/>
-<div class="jumbotron">
-<a class="btn btn-primary" ng-href="#filmspop">Films à l'affiche</a>
-<a class="btn btn-primary" ng-href="#acteurspop">Acteurs populaires</a>
+
+
+<h2>Les films les mieux notés:</h2>
+<div class="row">
+<div class="col-md-1"></div>
+<div ng-repeat="film in listFilmPop | limitTo:5:0 track by $index">
+
+    <div class="col-md-2" >
+       <a ng-href="#film/{{film.id}}">
+	       <img ng-src="{{film.poster_path | URLPoster}}" alt="{{film.original_title}}" class="description" width="145" height="200"/>
+	       <p class="text-center">{{film.original_title}}</p>
+	   </a>
+	 </div>
 </div>
+<div class="col-md-1"></div>
+</div>
+
+<div class="boutonPlus">
+<a class="btn btn-success" ng-href="#filmspop"><span class="glyphicon glyphicon-plus"/>&nbsp de films</a>
+</div>
+
+<h2>Top 5 des acteurs populaires:</h2>
+
+<div class="row">
+<div class="col-md-1"></div>
+<div ng-repeat="acteur in listActeurs | limitTo:5:0 track by $index">
+
+    <div class="col-md-2" >
+       <a ng-href="#acteur/{{acteur.id}}">
+	   <img ng-src="{{acteur.profile_path | urlprofile}}" alt="{{acteur.name}}" class="description" width="145" height="225"/>
+	   <p class="text-center">{{acteur.name}}</p>
+	 </a>
+	 </div>
+</div>
+<div class="col-md-1"></div>
+</div>
+
+
+
+
+
+<div class="boutonPlus">
+<a class="btn btn-success" ng-href="#acteurspop"><span class="glyphicon glyphicon-plus"/>&nbsp d'acteurs</a>
+</div>
+
+<br/>

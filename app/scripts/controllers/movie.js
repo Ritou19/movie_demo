@@ -11,6 +11,7 @@ angular.module('movieDemoApp')
   .controller('MovieCtrl', function ($scope, $routeParams, MoviesDB, $rootScope,$http) {
 
     $rootScope.db = MoviesDB;
+
     
     $http.get('http://amc.ig.he-arc.ch:3003/movie/' + $routeParams.id + '?append_to_response=similar,release,credits&language=fr').success(function(data){
              $scope.movie = data;
