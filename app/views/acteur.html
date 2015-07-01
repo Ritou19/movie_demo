@@ -1,7 +1,5 @@
-<p>This is the acteur view.</p>
-
 <div>
-    <h1>{{acteur.nom}}</h1>
+    <h1>{{acteur.name}}</h1>
     <p>{{acteur.biography}}</p>
     <p></p>
     <p>Date de naissance: <span ng-bind="acteur.birthday"></span></p>
@@ -10,7 +8,7 @@
 </div>
 <div class="row">
     <div class="col-xs-4">
-        <p><img ng-src="{{acteur.profile_path | URLPoster}}" class="description" width="180" height="280"/></p>
+        <p><img ng-src="{{acteur.profile_path | urlprofile}}" class="description" width="180" height="280"/></p>
     </div>
     <div class="col-xs-8">
         <slick dots="true" infinite="false" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="listFilm">
