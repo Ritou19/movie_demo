@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/movie.html',
         controller: 'MovieCtrl',
       })
+      .when('/acteur/:id',{
+        templateUrl: 'views/acteur.html',
+        controller: 'ActeurCtrl',
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
