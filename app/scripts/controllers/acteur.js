@@ -18,8 +18,9 @@ angular.module('movieDemoApp')
     });
 
     $http.get('http://amc.ig.he-arc.ch:3003/person/' + $routeParams.id + '/movie_credits').success(function(data){
-             $scope.listFilm = $scope.acteur.cast;
+             $scope.acteurDetail = data;
+             $scope.listFilm = $scope.acteurDetail.cast;
 
     });
-    
+
   });
