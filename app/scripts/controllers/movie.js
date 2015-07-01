@@ -15,7 +15,11 @@ angular.module('movieDemoApp')
     $http.get('http://amc.ig.he-arc.ch:3003/movie/' + $routeParams.id + '?append_to_response=similar,release,credits&language=fr').success(function(data){
              $scope.movie = data;
              $rootScope.bgImage = $scope.movie.backdrop_path;
+             $scope.moviesSimilar = $scope.movie.similar.results;
+
     });
+    
+
 
 
     

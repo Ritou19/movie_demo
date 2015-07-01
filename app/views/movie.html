@@ -11,3 +11,12 @@
 
 <p><img ng-src="{{movie.poster_path | URLPoster}}" class="description" width="180" height="280"/></p>
 <p>{{movie.id}}</p>
+
+
+<slick dots="true" infinite="false" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="moviesSimilar">
+    <div ng-repeat="film in moviesSimilar track by $index">
+        <a ng-href="#film/{{film.id}}">
+        <img ng-src="{{film.poster_path | URLPoster}}" alt="{{film.original_title}}" class="description" width="180" height="280"/>
+        </a>
+    </div>
+</slick>

@@ -35,6 +35,7 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  background-color: white;
 }
 
 .container-narrow > hr {
@@ -62,7 +63,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 900px;
   }
 
   /* Remove the padding we set earlier */
@@ -91,4 +92,8 @@ body {
 .description {
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.slickbg {
+  background-color: black;
 }

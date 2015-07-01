@@ -1,28 +1,19 @@
-<span>Titre: <input type="text" ng-model="titreFilm" /> Description: <input type="text" ng-model="descriptionFilm" /> 
-<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()"><span class="glyphicon glyphicon-plus"></span></a>
-</span>
-
-
-
-<!-- | = a un filtre -->
-
-<p>Hello <span ng-bind="nouveauFilm"></span></p>
-
-<label><input type="number" ng-model="nbAffiche"></input> nb à afficher
+<label> Afficher les films:
 
 <input type="checkbox" ng-model="active"></input></label>
-<button class="btn btn-primary" ng-click="debut=debut+10">+10</button> {{debut}}
+
 <!-- ng-hide > inverse ou fair ng-hide="!active"-->
 <div ng-show="active">
-<ul>
-	<li class="liste" ng-repeat="film in MoviesDB.getMovies() | limitTo:nbAffiche:debut track by $index">
-	 <a ng-href="#film/{{film.id}}">
-	   <img ng-src="{{film.poster_path | URLPoster}}" class="description" width="180" height="280"/>
-	   {{film.original_title}}
+
+
+<slick infinite="true" slides-to-show="3" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="MoviesDB.getMovies()">
+ <div ng-repeat="film in MoviesDB.getMovies() track by $index">
+  <a ng-href="#film/{{film.id}}">
+	   <img ng-src="{{film.poster_path | URLPoster}}" alt="{{film.original_title}}" class="description" width="180" height="280"/>
+	   <p>{{film.original_title}}</p>
 	 </a>
-	 &nbsp
-	 <span class="glyphicon glyphicon-trash" ng-click="supprimerFilm(film)"></span>
-    </li>
-    
-</ul>
+ </div>
+</slick>
+
+
 </div>
