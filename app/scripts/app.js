@@ -16,7 +16,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'slick',
-    'ngFlag'
+    'ngFlag',
+    'rateYo'
   ])
   .config(function ($routeProvider) {
     $routeProvider

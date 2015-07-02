@@ -18,8 +18,11 @@ angular.module('movieDemoApp')
              $rootScope.bgImage = $scope.movie.backdrop_path;
              $scope.moviesSimilar = $scope.movie.similar.results;
              $scope.listActeurs = $scope.movie.credits.cast;
+             $scope.rating = $scope.movie.vote_average / 2;
+             $scope.voteCount = $scope.movie.vote_count;
 
     });
+    
     
 
 

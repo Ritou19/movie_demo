@@ -107,3 +107,11 @@ body {
 .boutonPlus{
   text-align: right;
 }
+
+.inlineLabel{
+  display: inline-block;
+}
+
+.gras {
+  font-weight: 900;
+}

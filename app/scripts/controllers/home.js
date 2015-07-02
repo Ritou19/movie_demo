@@ -11,7 +11,7 @@ angular.module('movieDemoApp')
   .controller('HomeCtrl', function ($scope,$rootScope,$http) {
     $rootScope.bgImage = null;
 
-    $http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr').success(function(data){
+    $http.get('http://amc.ig.he-arc.ch:3003/movie/top_rated?language=fr').success(function(data){
     	$scope.listFilmPop = data.results;
     })
 

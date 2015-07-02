@@ -1,10 +1,12 @@
 <div>
     <h1>{{movie.original_title}}</h1>
+    <span class="gras">Synoptique:</span>
     <p>{{movie.overview}}</p>
     <p></p>
-    <p>Date de sortie: <span ng-bind="movie.release_date"></span></p>
-    <p>Budget:&nbsp<span ng-bind="movie.budget"></span>&nbsp$</p>
-
+    <p><span class="gras">Date de sortie:</span> <span ng-bind="movie.release_date"></span></p>
+    <p><span class="gras">Budget:&nbsp</span><span ng-bind="movie.budget"></span>&nbsp$</p>
+    <p><span class="gras">Note:&nbsp</span><rate-yo class="inlineLabel" on-set="set" on-change="change" ng-model="rating" read-only="options.readOnly" options="options"></rate-yo>
+    &nbsp&nbsp <span class="gras">({{voteCount}}&nbsp votes)</span></p>
 </div>
 <div class="row">
     <div class="col-xs-4">
@@ -22,12 +24,7 @@
 
     </div>
 </div>
-
-
-
-
-
-
+<center><h2>Films similaires</h2></center>
 
 <slick dots="true" infinite="false" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="moviesSimilar">
     <div ng-repeat="film in moviesSimilar track by $index">
